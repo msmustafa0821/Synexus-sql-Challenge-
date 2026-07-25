@@ -1,149 +1,162 @@
-# 🗄️ Synexus SQL Challenge
+# Day 3 & 4 – Data Modification, Filtering, Sorting & Limiting
 
-Welcome to my **Synexus SQL Challenge** repository!
+## 📖 Overview
 
-This repository documents my progress throughout the Synexus SQL Challenge, where I am learning the fundamentals of **MySQL** and **Database Management Systems (DBMS)** through hands-on practice.
+Days 3 and 4 focused on mastering the remaining CRUD operations and learning how to retrieve precise datasets efficiently.
 
-Each day's work is organized into separate SQL script files containing the queries and concepts covered during that session.
+On Day 3, the focus was on modifying and removing existing records using `UPDATE` and `DELETE`, while understanding the critical role of the `WHERE` clause in preventing unintended changes.
 
----
+On Day 4, the focus shifted to querying data intelligently by filtering records, combining conditions, sorting results, and limiting returned rows using SQL's essential query clauses.
 
-## 📅 Progress
-
-| Day | Topic | Status |
-|-----|-------------------------------|:------:|
-| Day 1 | Database & Table Creation | ✅ Completed |
-| Day 2 | Data Insertion & Data Retrieval | ✅ Completed |
+Together, these concepts form the foundation for writing efficient and production-ready SQL queries.
 
 ---
 
-# 📘 Day 1 – Database & Table Creation
+## 🎯 Objectives
 
-### 🎯 Objective
+### Day 3
 
-Learn the fundamentals of creating a database and designing relational tables using SQL.
+- Modify existing records using `UPDATE`
+- Change column values with `SET`
+- Remove records using `DELETE FROM`
+- Understand the importance of the `WHERE` clause
+- Verify changes using `SELECT`
 
-### 📚 Topics Covered
+### Day 4
 
-- Creating a database
-- Selecting a database using `USE`
-- Creating tables
-- Primary Keys
-- Auto Increment
-- Unique Constraints
-- Default Values
-- Basic table verification
-
-### 🛠 SQL Commands Learned
-
-- `CREATE DATABASE`
-- `USE`
-- `CREATE TABLE`
-- `SHOW TABLES`
-- `DESCRIBE`
-
-### 📂 Tables Created
-
-### Members
-
-| Column | Data Type |
-|---------|-----------|
-| member_id | INT (Primary Key, Auto Increment) |
-| first_name | VARCHAR(50) |
-| last_name | VARCHAR(50) |
-| email | VARCHAR(100) UNIQUE |
-| designation | VARCHAR(50) |
-| joined_at | TIMESTAMP |
-
-### Events
-
-| Column | Data Type |
-|---------|-----------|
-| event_id | INT (Primary Key, Auto Increment) |
-| event_name | VARCHAR(150) NOT NULL |
-| event_date | DATE |
-| location | VARCHAR(100) |
-| is_active | BOOLEAN |
-
-### 📁 File
-
-```
-day1.sql
-```
+- Filter records using `WHERE`
+- Combine multiple conditions with `AND` and `OR`
+- Sort query results using `ORDER BY`
+- Retrieve only required rows using `LIMIT`
+- Learn the correct order of SQL query execution
 
 ---
 
-# 📘 Day 2 – Data Insertion & Retrieval
+## 🛠️ Concepts Covered
 
-### 🎯 Objective
+### Day 3
 
-Learn how to insert records into database tables and retrieve data using SQL queries.
+- UPDATE
+- SET
+- DELETE FROM
+- WHERE
+- CRUD Operations
+- Data Verification
 
-### 📚 Topics Covered
+### Day 4
 
-- Inserting records into tables
-- Adding multiple rows
-- Retrieving all records
-- Selecting specific columns
-- Counting records
-
-### 🛠 SQL Commands Learned
-
-- `INSERT INTO`
-- `VALUES`
-- `SELECT`
-- `SELECT *`
-- `COUNT()`
-
-### Operations Performed
-
-- Inserted sample members
-- Inserted sample events
-- Retrieved all member records
-- Retrieved all event records
-- Displayed selected columns
-- Counted total members
-
-### 📁 File
-
-```
-day2.sql
-```
+- WHERE
+- AND
+- OR
+- ORDER BY
+- ASC
+- DESC
+- LIMIT
 
 ---
 
-# 🛠 Tech Stack
+## 💻 SQL Operations Performed
 
-- MySQL Community Server
-- MySQL Workbench
-- SQL
+### Day 3 – Modifying Data
+
+#### Inserted Test Records
+
+Created temporary member and event records to safely practice data modification.
+
+#### Updated Existing Data
+
+Promoted a test member by updating the `designation` field using the `UPDATE` statement.
+
+#### Deleted Existing Data
+
+Removed a cancelled test event using the `DELETE FROM` statement.
+
+#### Verified Changes
+
+Executed `SELECT` queries to confirm that updates and deletions were successfully applied.
 
 ---
 
-# 🎯 Learning Goals
+### Day 4 – Querying Data Efficiently
 
-- Understand relational database concepts
-- Learn SQL fundamentals
-- Build strong database design skills
-- Prepare for backend development
-- Strengthen problem-solving using SQL
+#### Filtered Records
+
+Retrieved members with a specific designation using the `WHERE` clause.
+
+#### Applied Multiple Conditions
+
+Queried active events scheduled after the current date using the `AND` operator.
+
+#### Combined Conditions
+
+Retrieved members matching multiple designations using the `OR` operator.
+
+#### Sorted Results
+
+Displayed members alphabetically by their last name using `ORDER BY`.
+
+#### Limited Output
+
+Fetched the newest member by combining `ORDER BY joined_at DESC` with `LIMIT 1`.
 
 ---
 
-# 📂 Repository Structure
+## ⚠️ Key Learnings
 
-```
-Synexus-SQL-Challenge/
-│
-├── day1.sql
-├── day2.sql
-└── README.md
+### The Importance of WHERE
+
+The `WHERE` clause is one of the most important safety features in SQL.
+
+Without it:
+
+- `UPDATE` modifies every row in a table.
+- `DELETE` removes every row from a table.
+
+Using `WHERE` ensures that only the intended records are affected.
+
+---
+
+### SQL Clause Order
+
+SQL statements must follow a strict order.
+
+```sql
+SELECT
+FROM
+WHERE
+ORDER BY
+LIMIT
 ```
 
+Changing this sequence results in syntax errors.
+
 ---
 
-## 🚀 About
+## 📚 Outcomes
 
-This repository is part of my learning journey through the **Synexus SQL Challenge**, where I document my daily progress, practice SQL concepts, and build a strong foundation in database management.
+By completing Days 3 and 4, I learned to:
 
-More updates will be added as I progress through the challenge.
+- Complete the full CRUD lifecycle
+- Safely update and delete database records
+- Retrieve only relevant data using filtering conditions
+- Combine logical conditions with `AND` and `OR`
+- Sort query results efficiently
+- Limit returned records for better performance
+- Understand the proper execution order of SQL query clauses
+
+---
+
+## 🚀 Skills Gained
+
+- UPDATE
+- DELETE
+- WHERE
+- AND / OR
+- ORDER BY
+- LIMIT
+- CRUD Operations
+- Data Filtering
+- Query Optimization Fundamentals
+- SQL Query Structuring
+
+---
